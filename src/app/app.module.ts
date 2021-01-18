@@ -11,6 +11,8 @@ import { StatsContainerComponent } from './stats/stats-container/stats-container
 import { StatsChartComponent } from './stats/stats-container/stats-chart/stats-chart.component';
 import {AddReportComponent} from "./dashboard/add-report/add-report.component";
 import { DashboardContainerComponent } from './dashboard/dashboard-container/dashboard-container.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import {routing} from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { DashboardContainerComponent } from './dashboard/dashboard-container/das
     ReportsTableComponent,
     StatsContainerComponent,
     StatsChartComponent,
-    DashboardContainerComponent
+    DashboardContainerComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [AppComponent]

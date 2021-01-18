@@ -120,5 +120,10 @@
       }
     }
   },
-  "defaultProject": "diabets-app"
+  "defaultProject": "diabets-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }
