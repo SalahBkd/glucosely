@@ -1,0 +1,17 @@
+.ops-btns-container {
+  width: 90%;
+  margin: auto;
+}
+
+.ops-btns {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+.reports-table {
+  margin-top: 4rem;
+}

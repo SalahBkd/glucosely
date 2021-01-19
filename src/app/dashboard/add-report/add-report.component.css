@@ -1,0 +1,14 @@
+.add {
+  flex: 1 1 20rem;
+}
+
+.add-icon {
+  background-image: url("../../../assets/icons/add.svg");
+  background-repeat: no-repeat;
+  width: 6rem;
+  height: 6rem;
+}
+
+.add-icon:hover {
+  cursor: pointer;
+}
