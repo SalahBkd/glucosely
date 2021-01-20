@@ -14,6 +14,16 @@
       "id": 3,
       "valeur": 7.3,
       "creationDate": "1611407229"
+    },
+    {
+      "valeur": 3453656,
+      "creationDate": "1611187200000000",
+      "id": 4
+    },
+    {
+      "valeur": 5454,
+      "creationDate": "1611964800",
+      "id": 5
     }
   ]
 }

@@ -17,7 +17,7 @@ td, th {
 }
 
 .update-icon {
-  background-image: url("../../../assets/icons/update.svg");
+  background-image: url("../../../../assets/icons/update.svg");
   background-repeat: no-repeat;
   width: 4rem;
   height: 4rem;
@@ -28,7 +28,7 @@ td, th {
 }
 
 .delete-icon {
-  background-image: url("../../../assets/icons/delete.svg");
+  background-image: url("../../../../assets/icons/delete.svg");
   background-repeat: no-repeat;
   width: 4rem;
   height: 4rem;
