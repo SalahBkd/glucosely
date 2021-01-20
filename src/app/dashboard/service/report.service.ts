@@ -30,7 +30,7 @@ export class ReportService {
   }
 
   update(report: Report) {
-    return this.http.put(BASE_URL, report)
+    return this.http.put(`${BASE_URL}/${report.id}`, report)
       .pipe(
         catchError(this.handlError)
       );

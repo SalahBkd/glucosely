@@ -2,8 +2,8 @@
   "reports": [
     {
       "id": 1,
-      "valeur": 8.3,
-      "creationDate": "1611148029"
+      "valeur": 2222,
+      "creationDate": "1610755200"
     },
     {
       "id": 2,
@@ -12,43 +12,18 @@
     },
     {
       "id": 3,
-      "valeur": 7.3,
-      "creationDate": "1611407229"
+      "valeur": 999,
+      "creationDate": "1611100800"
     },
     {
-      "valeur": 8,
-      "creationDate": "1610668800",
-      "id": 4
+      "id": 4,
+      "valeur": 10000,
+      "creationDate": "1609632000"
     },
     {
-      "valeur": 983,
-      "creationDate": "1611878400",
+      "valeur": 90,
+      "creationDate": "1611014400",
       "id": 5
-    },
-    {
-      "valeur": 32424,
-      "creationDate": "1611273600",
-      "id": 6
-    },
-    {
-      "valeur": 24242,
-      "creationDate": "1611792000",
-      "id": 7
-    },
-    {
-      "valeur": 43434,
-      "creationDate": "1611792000",
-      "id": 8
-    },
-    {
-      "valeur": 13232,
-      "creationDate": "1611619200",
-      "id": 9
-    },
-    {
-      "valeur": 534535,
-      "creationDate": "1611273600",
-      "id": 10
     }
   ]
 }

@@ -1,8 +1,6 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {ReportService} from "../../service/report.service";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {EventEmitter} from "@angular/core";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-add-report',
@@ -15,7 +13,7 @@ export class AddReportComponent implements OnInit {
   public form: FormGroup;
   @Output() public refresh = new EventEmitter();
 
-  constructor(private reportService: ReportService, private router: Router) { }
+  constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({

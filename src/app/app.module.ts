@@ -16,6 +16,7 @@ import {routing} from "./app.routing";
 import { AboutComponent } from './layout/about/about.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     ReactiveFormsModule,
     routing
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

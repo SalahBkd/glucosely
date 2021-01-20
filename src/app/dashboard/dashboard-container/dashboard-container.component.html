@@ -4,6 +4,6 @@
     <app-generate-report></app-generate-report>
   </div>
   <div class="reports-table">
-    <app-reports-table [reports]="reports"></app-reports-table>
+    <app-reports-table [reports]="reports" (refresh)="refreshReports()"></app-reports-table>
   </div>
 </div>
