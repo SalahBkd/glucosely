@@ -4,25 +4,9 @@
     <th>Date de création</th>
     <th>Gérer</th>
   </tr>
-  <tr>
-    <td>8.3</td>
-    <td>19/01/2021</td>
-    <td class="gerer">
-      <div class="update-icon"></div>
-      <div class="delete-icon"></div>
-    </td>
-  </tr>
-  <tr>
-    <td>8.3</td>
-    <td>19/01/2021</td>
-    <td class="gerer">
-      <div class="update-icon"></div>
-      <div class="delete-icon"></div>
-    </td>
-  </tr>
-  <tr>
-    <td>8.3</td>
-    <td>19/01/2021</td>
+  <tr *ngFor="let report of reports">
+    <td>{{report.valeur}}</td>
+    <td>{{report.creationDate * 1000 | date:'dd/MM/yyyy'}}</td>
     <td class="gerer">
       <div class="update-icon"></div>
       <div class="delete-icon"></div>
@@ -30,23 +14,4 @@
   </tr>
 </table>
 
-<div class="popup-wrapper">
-  <div class="popup">
-    <div class="popup-close">x</div>
-    <div class="popup-content">
-      <form>
-        <div class="form-valeur">
-          <label for="valeur" class="form-label">Valeur: </label>
-          <input type="text" name="valeur" id="valeur">
-        </div>
 
-        <div class="form-date">
-          <label for="date" class="form-label">Date: </label>
-          <input type="date" name="date" id="date">
-        </div>
-
-        <button class="form-add">Ajouter</button>
-      </form>
-    </div>
-  </div>
-</div>

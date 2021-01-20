@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReportService} from "../service/report.service";
 
 @Component({
   selector: 'app-reports-table',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsTableComponent implements OnInit {
 
-  constructor() { }
+  public reports = [];
+
+  constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
+    this.getAllReports();
+  }
+
+  // DATA SERVICE
+  getAllReports() {
+    this.reportService.getAll()
+      .subscribe(reports => this.reports = reports, error => {
+        console.log(error);
+      });
   }
 
 }

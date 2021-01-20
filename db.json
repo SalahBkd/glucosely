@@ -1,0 +1,19 @@
+{
+  "reports": [
+    {
+      "id": 1,
+      "valeur": 8.3,
+      "creationDate": "1611148029"
+    },
+    {
+      "id": 2,
+      "valeur": 7.3,
+      "creationDate": "1611234429"
+    },
+    {
+      "id": 3,
+      "valeur": 7.3,
+      "creationDate": "1611407229"
+    }
+  ]
+}

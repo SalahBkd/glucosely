@@ -13,6 +13,8 @@ import {AddReportComponent} from "./dashboard/add-report/add-report.component";
 import { DashboardContainerComponent } from './dashboard/dashboard-container/dashboard-container.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {routing} from "./app.routing";
+import { AboutComponent } from './layout/about/about.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import {routing} from "./app.routing";
     StatsContainerComponent,
     StatsChartComponent,
     DashboardContainerComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     routing
   ],
   providers: [],

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ReportService} from "../service/report.service";
 
 @Component({
   selector: 'app-add-report',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddReportComponent implements OnInit {
 
-  constructor() { }
+  public showAddFormPopup = false;
+
+  constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
   }
+
+  // UI
+  onAddIconClick() {
+    this.showAddFormPopup = true;
+  }
+
+  onCloseAddFormPopup() {
+    this.showAddFormPopup = false;
+  }
+
+  // DATA SERVICE
+  
 
 }
