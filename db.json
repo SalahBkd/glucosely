@@ -16,14 +16,39 @@
       "creationDate": "1611407229"
     },
     {
-      "valeur": 3453656,
-      "creationDate": "1611187200000000",
+      "valeur": 8,
+      "creationDate": "1610668800",
       "id": 4
     },
     {
-      "valeur": 5454,
-      "creationDate": "1611964800",
+      "valeur": 983,
+      "creationDate": "1611878400",
       "id": 5
+    },
+    {
+      "valeur": 32424,
+      "creationDate": "1611273600",
+      "id": 6
+    },
+    {
+      "valeur": 24242,
+      "creationDate": "1611792000",
+      "id": 7
+    },
+    {
+      "valeur": 43434,
+      "creationDate": "1611792000",
+      "id": 8
+    },
+    {
+      "valeur": 13232,
+      "creationDate": "1611619200",
+      "id": 9
+    },
+    {
+      "valeur": 534535,
+      "creationDate": "1611273600",
+      "id": 10
     }
   ]
 }

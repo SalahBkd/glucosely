@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ReportService} from "../../service/report.service";
 
 @Component({
@@ -6,22 +6,9 @@ import {ReportService} from "../../service/report.service";
   templateUrl: './reports-table.component.html',
   styleUrls: ['./reports-table.component.css']
 })
-export class ReportsTableComponent implements OnInit {
+export class ReportsTableComponent {
 
-  public reports = [];
-
-  constructor(private reportService: ReportService) { }
-
-  ngOnInit(): void {
-    this.getAllReports();
-  }
-
-  // DATA SERVICE
-  getAllReports() {
-    this.reportService.getAll()
-      .subscribe(reports => this.reports = reports, error => {
-        console.log(error);
-      });
-  }
+  @Input() public reports = [];
+  @Output() public refresh = new EventEmitter();
 
 }

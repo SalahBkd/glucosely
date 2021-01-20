@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {ReportService} from "../../service/report.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {EventEmitter} from "@angular/core";
 
 @Component({
   selector: 'app-add-report',
@@ -11,8 +13,9 @@ export class AddReportComponent implements OnInit {
 
   public showAddFormPopup = false;
   public form: FormGroup;
+  @Output() public refresh = new EventEmitter();
 
-  constructor(private reportService: ReportService) { }
+  constructor(private reportService: ReportService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -36,12 +39,16 @@ export class AddReportComponent implements OnInit {
       creationDate: newDate.toString()
     }
     this.addReport(newReport);
+    this.showAddFormPopup = false;
+    this.form.reset();
+    this.refresh.emit();
   }
 
 
   // DATA SERVICE
   addReport(report) {
     this.reportService.add(report)
-      .subscribe(res => console.log(res), error => console.log(error));
+      .subscribe(error => console.log(error));
   }
+
 }
