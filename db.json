@@ -2,18 +2,33 @@
   "reports": [
     {
       "id": 1,
-      "valeur": 19,
+      "valeur": 0.4,
       "creationDate": "1611273600"
     },
     {
-      "valeur": 22,
+      "valeur": 0.7,
       "creationDate": "1609545600",
       "id": 2
     },
     {
       "id": 3,
-      "valeur": 4444,
+      "valeur": 0.5,
       "creationDate": "1614553200"
+    },
+    {
+      "id": 4,
+      "valeur": 0.6,
+      "creationDate": "1614553200"
+    },
+    {
+      "id": 5,
+      "valeur": 0.9,
+      "creationDate": "1614553200"
+    },
+    {
+      "valeur": 2,
+      "creationDate": "1611360000",
+      "id": 6
     }
   ]
 }

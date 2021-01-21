@@ -1,7 +1,7 @@
 <div class="ops-btns-container">
   <div class="ops-btns">
     <app-add-report></app-add-report>
-    <app-generate-report></app-generate-report>
+    <app-generate-report [reports]="reports"></app-generate-report>
   </div>
   <div class="reports-table">
     <app-reports-table [reports]="reports"></app-reports-table>

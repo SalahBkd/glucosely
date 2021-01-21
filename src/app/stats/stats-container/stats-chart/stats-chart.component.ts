@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ChartDataSets, ChartOptions} from "chart.js";
 import {Color, Label} from "ng2-charts";
+import {ReportService} from "../../../dashboard/service/report.service";
 
 @Component({
   selector: 'app-stats-chart',
@@ -9,9 +10,9 @@ import {Color, Label} from "ng2-charts";
 })
 export class StatsChartComponent implements OnInit {
 
-  public lineChartData: ChartDataSets[] = [
-    { data: [0.2, 0.97, 1.00, 1.23, 1.17, 1.21, 1.094, 1.0895, 1.034, 1.087], label: 'Series A' },
-  ];
+  private reports = [];
+
+  public lineChartData: ChartDataSets[] = [];
   public lineChartLabels: Label[] = ['janvier', 'mai', 'septembre', 'février', 'juin', 'octobre', 'mars', 'juillet', 'novembre', 'avril', 'aout', 'décembre'];
   public lineChartOptions: (ChartOptions & { annotation: any }) = {
     annotation: undefined
@@ -31,9 +32,23 @@ export class StatsChartComponent implements OnInit {
   public lineChartType = 'line';
   public lineChartPlugins = [];
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private reportService: ReportService) {
   }
 
+  ngOnInit() {
+    this.reportService.getAll()
+      .subscribe(
+        reports => this.reports = reports,
+        error =>  console.log(error),
+        () => this.setChartData()
+      );
+  }
+
+  setChartData() {
+    const values = [];
+    this.reports.forEach(report => values.push(report.valeur));
+    this.lineChartData = [
+      { data: values, label: 'Series A' },
+    ];
+  }
 }
