@@ -36,8 +36,8 @@ export class ReportService {
       );
   }
 
-  delete(reportId) {
-    const url = `${BASE_URL}/${reportId}`;
+  delete(report: Report) {
+    const url = `${BASE_URL}/${report.id}`;
     return this.http.delete(url)
       .pipe(
         catchError(this.handlError)

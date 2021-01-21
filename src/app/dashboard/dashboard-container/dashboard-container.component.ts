@@ -13,17 +13,10 @@ export class DashboardContainerComponent implements OnInit {
   constructor(private reportService: ReportService) { }
 
   ngOnInit(): void {
-    this.getAllReports();
+    this.refreshReports();
   }
 
   // DATA SERVICE
-  public getAllReports() {
-    this.reportService.getAll()
-      .subscribe(reports => this.reports = reports, error => {
-        console.log(error);
-      });
-  }
-
   public refreshReports() {
     this.reportService.getAll()
       .subscribe(reports => this.reports = reports, error => {

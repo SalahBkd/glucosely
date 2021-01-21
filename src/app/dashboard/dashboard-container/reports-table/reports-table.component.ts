@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ReportService} from "../../service/report.service";
 import {Report} from "../../model/Report";
 import {FormControl, FormGroup} from "@angular/forms";
 import { DatePipe } from '@angular/common';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-reports-table',
@@ -12,11 +13,11 @@ import { DatePipe } from '@angular/common';
 export class ReportsTableComponent {
 
   @Input() public reports = [];
-  @Output() public refresh = new EventEmitter();
   public showUpdateFormPopup = false;
   public form: FormGroup = null;
+  public showDeletePopup = false;
 
-  constructor(private reportService: ReportService, private datePipe: DatePipe) { }
+  constructor(private reportService: ReportService, private datePipe: DatePipe, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +35,23 @@ export class ReportsTableComponent {
     });
   }
 
+  handleDelete(report: Report) {
+    this.toggleDeletePopup();
+  }
+
+  toggleDeletePopup() {
+    this.showDeletePopup = !this.showDeletePopup;
+  }
+
+  handleDeleteConfirm(report: Report) {
+    this.deleteReport(report);
+    this.toggleDeletePopup();
+  }
+
+  handleDeleteCancel() {
+    this.toggleDeletePopup();
+  }
+
   // FORM
   onSubmit(report) {
     let newDate = new Date(report.creationDate).getTime() / 1000;
@@ -47,16 +65,33 @@ export class ReportsTableComponent {
     this.updateReport(newReport);
     this.showUpdateFormPopup = false;
     this.form.reset();
-    this.refresh.emit();
-  }
 
+  }
 
   // DATA SERVICE
   updateReport(report) {
     this.reportService.update(report)
-      .subscribe(error => console.log(error));
+      .subscribe(
+        value => console.log(value),
+        error => console.log(error),
+        () =>
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/dashboard'])
+          })
+      );
   }
 
+  deleteReport(report) {
+    this.reportService.delete(report)
+      .subscribe(
+        value => console.log(value),
+        error => console.log(error),
+        () =>
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/dashboard'])
+          })
+      );
+  }
 
   // UTILS
   private toggleUpdateIcon() {

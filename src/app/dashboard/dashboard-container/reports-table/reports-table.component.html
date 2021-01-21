@@ -9,27 +9,39 @@
     <td>{{report.creationDate * 1000 | date:'dd/MM/yyyy'}}</td>
     <td class="gerer">
       <div class="update-icon" (click)="handlUpdate(report)"></div>
-        <div class="popup-wrapper" *ngIf="showUpdateFormPopup">
+        <div class="popup-wrapper" *ngIf="showDeletePopup">
           <div class="popup">
-            <div class="popup-close" (click)="toggleUpdateIcon()">x</div>
+            <div class="popup-close" (click)="toggleDeletePopup()">x</div>
             <div class="popup-content">
-              <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-                <div class="form-valeur">
-                  <label for="valeur" class="form-label">Valeur: </label>
-                  <input type="text" name="valeur" id="valeur" formControlName="valeur">
-                </div>
-
-                <div class="form-date">
-                  <label for="date" class="form-label">Date: </label>
-                  <input type="date" name="date" id="date" formControlName="creationDate">
-                </div>
-
-                <button class="form-add" [disabled]="!form.valid">Update</button>
-              </form>
+              <div>
+                <p>Confirm Deletion</p>
+                <button (click)="handleDeleteConfirm(report)">Confirm</button>
+                <button (click)="handleDeleteCancel()">Cancel</button>
+              </div>
             </div>
           </div>
         </div>
-      <div class="delete-icon"></div>
+      <div class="delete-icon" (click)="handleDelete(report)"></div>
+      <div class="popup-wrapper" *ngIf="showUpdateFormPopup">
+        <div class="popup">
+          <div class="popup-close" (click)="toggleUpdateIcon()">x</div>
+          <div class="popup-content">
+            <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+              <div class="form-valeur">
+                <label for="valeur" class="form-label">Valeur: </label>
+                <input type="text" name="valeur" id="valeur" formControlName="valeur">
+              </div>
+
+              <div class="form-date">
+                <label for="date" class="form-label">Date: </label>
+                <input type="date" name="date" id="date" formControlName="creationDate">
+              </div>
+
+              <button class="form-add" [disabled]="!form.valid">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </td>
   </tr>
 </table>

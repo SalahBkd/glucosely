@@ -1,6 +1,7 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ReportService} from "../../service/report.service";
 import {FormControl, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-report',
@@ -11,9 +12,8 @@ export class AddReportComponent implements OnInit {
 
   public showAddFormPopup = false;
   public form: FormGroup;
-  @Output() public refresh = new EventEmitter();
 
-  constructor(private reportService: ReportService) { }
+  constructor(private reportService: ReportService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -31,7 +31,6 @@ export class AddReportComponent implements OnInit {
   onSubmit(report) {
     let newDate = new Date(report.creationDate).getTime() / 1000;
     let newValeur = parseInt(report.valeur);
-
     let newReport = {
       valeur: newValeur,
       creationDate: newDate.toString()
@@ -39,14 +38,19 @@ export class AddReportComponent implements OnInit {
     this.addReport(newReport);
     this.showAddFormPopup = false;
     this.form.reset();
-    this.refresh.emit();
   }
 
 
   // DATA SERVICE
   addReport(report) {
     this.reportService.add(report)
-      .subscribe(error => console.log(error));
+      .subscribe(
+        value => console.log(''),
+        error => console.log(error),
+        () =>
+          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['/dashboard'])
+          }));
   }
 
 }
