@@ -17,6 +17,7 @@ import { AboutComponent } from './layout/about/about.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {DatePipe} from "@angular/common";
+import {ChartsModule} from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import {DatePipe} from "@angular/common";
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
-    routing
+    routing,
+    ChartsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
