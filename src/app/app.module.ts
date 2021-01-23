@@ -18,6 +18,16 @@ import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {DatePipe} from "@angular/common";
 import {ChartsModule} from "ng2-charts";
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment";
+import {AngularFireAuthModule} from "@angular/fire/auth";
+import {AngularFirestoreModule} from "@angular/fire/firestore";
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+import {AuthService} from "./auth/service/AuthService";
+import { UserProfileComponent } from './layout/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -32,16 +42,24 @@ import {ChartsModule} from "ng2-charts";
     StatsChartComponent,
     DashboardContainerComponent,
     NotFoundComponent,
-    AboutComponent
+    AboutComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
     routing,
-    ChartsModule
+    ChartsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
