@@ -6,9 +6,19 @@
       "creationDate": "1611360000"
     },
     {
-      "valeur": 34,
-      "creationDate": "1609545600",
+      "valeur": 8,
+      "creationDate": "1611610431.812",
       "id": 2
+    },
+    {
+      "valeur": 32,
+      "creationDate": "1611610435.732",
+      "id": 3
+    },
+    {
+      "valeur": 65,
+      "creationDate": "1611610440.54",
+      "id": 4
     }
   ]
 }

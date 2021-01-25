@@ -30,8 +30,7 @@ export class ReportsTableComponent {
 
     this.form = new FormGroup({
       id: new FormControl(report.id),
-      valeur: new FormControl(report.valeur),
-      creationDate: new FormControl(datePipeString)
+      valeur: new FormControl(report.valeur)
     });
   }
 
@@ -54,7 +53,7 @@ export class ReportsTableComponent {
 
   // FORM
   onSubmit(report) {
-    let newDate = new Date(report.creationDate).getTime() / 1000;
+    let newDate = new Date().getTime() / 1000;
     let newValeur = parseInt(report.valeur);
 
     let newReport = {
@@ -72,7 +71,7 @@ export class ReportsTableComponent {
   updateReport(report) {
     this.reportService.update(report)
       .subscribe(
-        value => console.log(value),
+        value => console.log(''),
         error => console.log(error),
         () =>
           this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

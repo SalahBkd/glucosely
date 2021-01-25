@@ -18,7 +18,6 @@ export class AddReportComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       valeur: new FormControl(''),
-      creationDate: new FormControl('')
     });
   }
 
@@ -29,7 +28,7 @@ export class AddReportComponent implements OnInit {
 
   // FORM
   onSubmit(report) {
-    let newDate = new Date(report.creationDate).getTime() / 1000;
+    let newDate = new Date().getTime() / 1000;
     let newValeur = parseInt(report.valeur);
     let newReport = {
       valeur: newValeur,
