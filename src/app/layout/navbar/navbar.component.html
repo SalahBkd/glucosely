@@ -1,11 +1,14 @@
 <header>
   <nav>
     <h1 class="logo" routerLink="/home">MyGlucose</h1>
-    <ul>
+    <ul *ngIf="authService.isLoggedIn">
       <li><a routerLink="/dashboard">Dashboard</a></li>
       <li><a routerLink="/stats">Statistques</a></li>
-      <li><a routerLink="/">Taha</a></li>
-      <li><a (click)="authService.SignOut()">Sign Out</a></li>
+      <li><a (click)="authService.SignOut()">Se déconnecter</a></li>
+    </ul>
+    <ul *ngIf="!authService.isLoggedIn">
+      <li><a routerLink="/sign-in">S'identifier</a></li>
+      <li><a routerLink="/register-user">S'inscrire</a></li>
     </ul>
   </nav>
 </header>

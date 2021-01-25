@@ -13,7 +13,6 @@ import {AddReportComponent} from "./dashboard/dashboard-container/add-report/add
 import { DashboardContainerComponent } from './dashboard/dashboard-container/dashboard-container.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {routing} from "./app.routing";
-import { AboutComponent } from './layout/about/about.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import {DatePipe} from "@angular/common";
@@ -24,7 +23,6 @@ import {AngularFireAuthModule} from "@angular/fire/auth";
 import {AngularFirestoreModule} from "@angular/fire/firestore";
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
-import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
 import {AuthService} from "./auth/service/AuthService";
 import { UserProfileComponent } from './layout/user-profile/user-profile.component';
@@ -42,10 +40,8 @@ import { UserProfileComponent } from './layout/user-profile/user-profile.compone
     StatsChartComponent,
     DashboardContainerComponent,
     NotFoundComponent,
-    AboutComponent,
     SignInComponent,
     SignUpComponent,
-    ForgotPasswordComponent,
     VerifyEmailComponent,
     UserProfileComponent
   ],

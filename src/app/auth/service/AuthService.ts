@@ -66,28 +66,13 @@ export class AuthService {
       })
   }
 
-  // Reset Forggot password
-  ForgotPassword(passwordResetEmail) {
-    return this.afAuth.sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      }).catch((error) => {
-        window.alert(error)
-      })
-  }
-
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
   }
 
-  // Sign in with Google
-  GoogleAuth() {
-    return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
-  }
-
-  // Auth logic to run auth providers
+  /* Auth logic to run auth providers
   AuthLogin(provider) {
     return this.afAuth.signInWithPopup(provider)
       .then((result) => {
@@ -98,7 +83,7 @@ export class AuthService {
       }).catch((error) => {
         window.alert(error)
       })
-  }
+  }*/
 
   /* Setting up user data when sign in with username/password,
   sign up with username/password and sign in with social auth
