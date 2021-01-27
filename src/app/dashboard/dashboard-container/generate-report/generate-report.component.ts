@@ -16,8 +16,11 @@ export class GenerateReportComponent implements OnInit {
   }
 
   handleGenerate() {
-    if(this.reports.length >= 3) {
+    console.log(this.reports.length);
+    if(this.reports.length >= 40) {
       this.router.navigate(['/stats']);
+    } else {
+      alert("Entrer au moin 40 valeurs");
     }
   }
 

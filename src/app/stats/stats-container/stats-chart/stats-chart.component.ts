@@ -11,6 +11,7 @@ import {ReportService} from "../../../dashboard/service/report.service";
 export class StatsChartComponent implements OnInit {
 
   private reports = [];
+  private chartData;
 
   public lineChartData: ChartDataSets[] = [];
   public lineChartLabels: Label[] = ['janvier', 'mai', 'septembre', 'février', 'juin', 'octobre', 'mars', 'juillet', 'novembre', 'avril', 'aout', 'décembre'];
@@ -45,10 +46,16 @@ export class StatsChartComponent implements OnInit {
   }
 
   setChartData() {
-    const values = [];
-    this.reports.forEach(report => values.push(report.valeur));
+    // input: at least array of 40 reports
+    // output: array of chart data that have at least 2 values [10.8, 11.7]
+
+    // will be at least 40 reports
+      // loop through each 20 values and calculate MOYENNE
+      // add MOYENNE to a a new array
+    // iterate again
+
     this.lineChartData = [
-      { data: values, label: 'Series A' },
+      { data: [10.8, 11.7], label: 'Series A' },
     ];
   }
 }

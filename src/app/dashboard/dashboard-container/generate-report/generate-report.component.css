@@ -1,22 +1,28 @@
-.generate {
+.generate-disabled {
   flex: 1 1 20rem;
   text-align: end;
-}
-
-.generate button {
   border-style: none;
   color: white;
+  background-color: lightgray;
   border-radius: 1rem;
   padding: 1rem;
-  background-color: #4E55F9;
   text-transform: uppercase;
-  cursor: pointer;
   transition: background 0.2s ease-in;
 }
 
-.generate button:hover {
-  background-color: #3d43c6;
-
+.generate-enabled {
+  flex: 1 1 20rem;
+  text-align: end;
+  border-style: none;
+  color: white;
+  background-color: #4E55F9;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  transition: background 0.2s ease-in;
+  cursor: pointer;
 }
+
+
 
 

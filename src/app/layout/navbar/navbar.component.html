@@ -3,7 +3,6 @@
     <h1 class="logo" routerLink="/home">MyGlucose</h1>
     <ul *ngIf="authService.isLoggedIn">
       <li><a routerLink="/dashboard">Dashboard</a></li>
-      <li><a routerLink="/stats">Statistques</a></li>
       <li><a (click)="authService.SignOut()">Se déconnecter</a></li>
     </ul>
     <ul *ngIf="!authService.isLoggedIn">

@@ -1,3 +1,6 @@
-<div class="generate">
-  <button (click)="handleGenerate()">Générer le graph</button>
-</div>
+<button
+  (click)="handleGenerate()"
+  [ngClass]="{'generate-disabled': reports.length < 40, 'generate-enabled': reports.length >= 40}"
+  [disabled]="reports.length < 40">Générer le graph
+</button>
+
