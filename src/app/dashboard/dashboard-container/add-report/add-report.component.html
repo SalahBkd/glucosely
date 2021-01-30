@@ -9,7 +9,7 @@
       <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
         <div class="form-valeur">
           <label for="valeur" class="form-label">Valeur: </label>
-          <input type="text" name="valeur" id="valeur" formControlName="valeur">
+          <input type="number" name="valeur" id="valeur" formControlName="valeur">
         </div>
 
         <button class="form-add" [disabled]="!form.valid">Ajouter</button>

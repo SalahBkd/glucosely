@@ -29,7 +29,7 @@ export class AddReportComponent implements OnInit {
   // FORM
   onSubmit(report) {
     let newDate = new Date().getTime() / 1000;
-    let newValeur = parseInt(report.valeur);
+    let newValeur = report.valeur;
     let newReport = {
       valeur: newValeur,
       creationDate: newDate.toString()
